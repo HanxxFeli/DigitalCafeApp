@@ -1,0 +1,25 @@
+<html>
+
+{% include "header.html" %}
+<h1>Login</h1>
+<form action="/auth" method="POST">
+    {% for message in get_flashed_messages() %}
+    <div class="error">
+        <h5> {{ message }} </h5>
+    </div>
+    {% endfor %}
+    <div>
+        Username or email address
+    </div>
+    <input type="text" name="username"></input>
+    <div>
+        Password
+    </div>
+    <input type="password" name="password"></input>
+    <div>
+        <input type="submit" value="Login" />
+    </div>
+</form>
+{% include "footer.html" %}
+
+</html>

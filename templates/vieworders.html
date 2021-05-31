@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>View Orders</title>
+</head>
+{% include "header.html" %}
+<h1>Orders</h1>
+
+<body>
+    <table>
+        {% if order_cart %}
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+        </tr>
+
+        {% for history in order_cart %}
+        {% for order in history %}
+        <tr>
+            <td>{{ order["name"] }}</td>
+            <td>{{ order["qty"] }}</td>
+            <td>{{ order["subtotal"] }}</td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+        {% else %}
+        <div class="error">
+            <h5> No orders have been made yet! </h5>
+        </div>
+        {% endif %}
+    </table>
+
+</body>
+{% include "footer.html" %}
+
+
+
+</html>

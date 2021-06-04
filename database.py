@@ -40,7 +40,7 @@ def get_branches():
     branches = products_db["branches"]
     for b in branches.find({}):
         branch_list.append(b)
-
+        
     return branch_list
 
 

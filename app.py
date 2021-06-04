@@ -40,6 +40,7 @@ def productdetails():
 @app.route('/branches')
 def branches():
     branch_list = db.get_branches()
+    print(branch_list)
     return render_template('branches.html', page='Branches', branch_list=branch_list) 
 
 
@@ -47,7 +48,7 @@ def branches():
 @app.route('/branchdetails')
 def branchdetials():
     code = request.args.get('code', '')
-    branch = db.get_branch(int(code))
+    branch = db.get_branch(float(code))
     return render_template('branchdetails.html', code=code, branch=branch)
 
 

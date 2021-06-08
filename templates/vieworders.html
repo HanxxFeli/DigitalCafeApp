@@ -13,6 +13,7 @@
         {% if order_cart %}
         <tr>
             <th>Name</th>
+            <th>Order Date</th>
             <th>Quantity</th>
             <th>Subtotal</th>
         </tr>
@@ -21,6 +22,7 @@
         {% for order in history %}
         <tr>
             <td>{{ order["name"] }}</td>
+            <td>{{ order_date }}</td>
             <td>{{ order["qty"] }}</td>
             <td>{{ order["subtotal"] }}</td>
         </tr>

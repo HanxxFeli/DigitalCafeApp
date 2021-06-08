@@ -149,11 +149,12 @@ def vieworders():
     order_cart = []
     for order in user_cart:
         if order["username"] == user["username"]:
+            order_date = order["orderdate"]
             user_cart_history = order["details"]
             order_cart.append(user_cart_history)
             print(user_cart_history)
     
-    return render_template('vieworders.html', order_cart=order_cart)
+    return render_template('vieworders.html', order_cart=order_cart, order_date=order_date)
 
 
 
